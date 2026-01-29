@@ -6,8 +6,8 @@
 [![License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-# Python3_template
-Basic Python3 template
+# Script manager API
+Basic Python3 script manager using a basic API REST
 
 ### Built With
 
@@ -31,7 +31,7 @@ You need install first:
 - Go to main project at [project-url]
 - Clone the repo:
 ```shell
-git clone https://github.com/alejandrogm90/python3_template.git
+git clone https://github.com/alejandrogm90/script_manager_api.git
 ```
 
 - Install all requirements:
@@ -43,7 +43,7 @@ pipenv update
 On terminal:
 
 ```shell
-pipenv run python main.py
+pipenv run python manage.py runserver
 ```
 
 _For more examples, please refer to the [Documentation][wiki-url]_
@@ -85,21 +85,21 @@ pipenv run python -m unittest test/utils/test_common_functions.py
 -->
 
 [version-shield]: https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge
-[contributors-shield]: https://img.shields.io/github/contributors/alejandrogm90/coin-comparator.svg?style=for-the-badge
-[forks-shield]: https://img.shields.io/github/forks/alejandrogm90/coin-comparator.svg?style=for-the-badge
-[stars-shield]: https://img.shields.io/github/stars/alejandrogm90/coin-comparator.svg?style=for-the-badge
-[issues-shield]: https://img.shields.io/github/issues/alejandrogm90/coin-comparator.svg?style=for-the-badge
-[license-shield]: https://img.shields.io/github/license/alejandrogm90/coin-comparator.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/alejandrogm90/script_manager_api.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/alejandrogm90/script_manager_api.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/alejandrogm90/script_manager_api.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/alejandrogm90/script_manager_api.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/alejandrogm90/script_manager_api.svg?style=for-the-badge
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [python-shield]: https://img.shields.io/badge/python-000000?style=for-the-badge&logo=python&logoColor=white
 
 [profile-url]: https://github.com/alejandrogm90
-[project-url]: https://github.com/alejandrogm90/coin-comparator/
-[wiki-url]: https://github.com/alejandrogm90/coin-comparator/wiki
-[contributors-url]: https://github.com/alejandrogm90/coin-comparator/graphs/contributors
-[forks-url]: https://github.com/alejandrogm90/coin-comparator/network/members
-[stars-url]: https://github.com/alejandrogm90/coin-comparator/stargazers
-[issues-url]: https://github.com/alejandrogm90/coin-comparator/issues
-[license-url]: https://github.com/alejandrogm90/coin-comparator/blob/master/LICENSE.txt
+[project-url]: https://github.com/alejandrogm90/script_manager_api/
+[wiki-url]: https://github.com/alejandrogm90/script_manager_api/wiki
+[contributors-url]: https://github.com/alejandrogm90/script_manager_api/graphs/contributors
+[forks-url]: https://github.com/alejandrogm90/script_manager_api/network/members
+[stars-url]: https://github.com/alejandrogm90/script_manager_api/stargazers
+[issues-url]: https://github.com/alejandrogm90/script_manager_api/issues
+[license-url]: https://github.com/alejandrogm90/script_manager_api/blob/master/LICENSE.txt
 [linkedin-url]: https://www.linkedin.com/in/alejandro-g-762869129/
 [python-url]: https://www.python.org/
