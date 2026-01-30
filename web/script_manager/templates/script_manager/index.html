@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Últimos Scripts Ejecutados</title>
+</head>
+<body>
+    <h1>Últimos 5 Scripts Ejecutados</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre del Script</th>
+                <th>Resultado</th>
+                <th>Inicio</th>
+                <th>Fin</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for script in scripts %}
+            <tr>
+                <td>{{ script.nombre }}</td>
+                <td>{{ script.resultado }}</td>
+                <td>{{ script.inicio }}</td>
+                <td>{{ script.fin }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
