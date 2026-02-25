@@ -6,7 +6,7 @@ from drf_spectacular.utils import extend_schema, extend_schema_view
 from rest_framework import viewsets
 from rest_framework.response import Response
 from .models import Script
-from .serializers import ScriptSerializer
+from .serializers import FullScriptSerializer, ScriptSerializer
 
 
 def index(request):
@@ -18,7 +18,7 @@ def index(request):
 )
 class ScriptViewList(viewsets.ViewSet):
     queryset = Script.objects.all()
-    serializer_class = ScriptSerializer
+    serializer_class = FullScriptSerializer
 
     def list(self, request):
         # Obtener los últimos 5 scripts
