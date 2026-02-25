@@ -1,3 +1,4 @@
+import secrets
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -8,8 +9,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = os.environ['SECRET_KEY']
-with open(f'{BASE_DIR.parent}/config/secret_key.txt') as f:
-    SECRET_KEY = f.read().strip()
+#with open(f'{BASE_DIR.parent}/config/secret_key.txt') as f:
+#    SECRET_KEY = f.read().strip()
+# Generar una clave de al menos 32 bytes
+SECRET_KEY = secrets.token_hex(32)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -19,13 +22,17 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'script_manager.apps.ScriptManagerConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    #'rest_framework.authtoken',
+    'rest_framework_simplejwt.token_blacklist',  # Para manejar tokens revocados
+    'drf_spectacular',
+    'script_manager.apps.ScriptManagerConfig',
 ]
 
 MIDDLEWARE = [
@@ -106,3 +113,28 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Configure REST Framework settings
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
+
+# Configure Spectacular settings
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Script Manager API',
+    'DESCRIPTION': 'API for managing the execution of some scripts',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+}
+
+SIMPLE_JWT = {
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': SECRET_KEY,  # Asegúrate de usar la clave segura aquí
+    'AUTH_HEADER_TYPES': ('Bearer',),
+}

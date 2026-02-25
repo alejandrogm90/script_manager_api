@@ -7,6 +7,9 @@ name = "pypi"
 django = "*"
 djangorestframework = "*"
 djangorestframework-stubs = "*"
+drf-spectacular = "*"
+drf-spectacular-sidecar = "*"
+djangorestframework-simplejwt = "*"
 
 [dev-packages]
 

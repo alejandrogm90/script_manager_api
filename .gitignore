@@ -163,4 +163,5 @@ cython_debug/
 
 # Project
 config/secret_key.txt
-web/scripts/party.sh
+web/script_manager/scripts/party.sh
+web/script_manager/scripts/bin
