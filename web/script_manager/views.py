@@ -47,18 +47,19 @@ class ScriptViewSet(viewsets.ViewSet):
 
         try:
             # Ejecutar el script con parámetros
-            comandos = ['python3', script_path] + parameters.split()  # Convertir a lista
-            resultado = subprocess.run(comandos, capture_output=True, text=True)
+            comandos = ['bash', script_path] + parameters.split()  # Convertir a lista
+            process = subprocess.Popen(comandos, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            stdout, stderr = process.communicate()
 
             # Capturar el momento de fin
             fin = datetime.now()
 
             # Guardar resultado y tiempos en la base de datos
-            script = Script(nombre=script_name, comandos=parameters, resultado=resultado.stdout, inicio=inicio, fin=fin)
+            script = Script(nombre=script_name, comandos=parameters, resultado=stdout, inicio=inicio, fin=fin)
             script.save()
 
             # Json salida
-            salida = {'output': resultado.stdout, 'error': resultado.stderr, 'inicio': inicio, 'fin': fin}
+            salida = {'output': stdout, 'error': stderr, 'inicio': inicio, 'fin': fin}
 
             return Response(salida, status=201)
         except subprocess.CalledProcessError as e:
