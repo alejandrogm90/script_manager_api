@@ -45,6 +45,9 @@ On terminal:
 ```shell
 pipenv run python manage.py runserver
 ```
+```shell
+pipenv run python manage.py runserver 0.0.0.0:8000
+```
 launch one script
 ```shell
 curl -X POST http://localhost:8000/api/scripts/ -d "script_name=hello.py&parameters=param1 param2"

@@ -59,7 +59,7 @@ class ScriptViewSet(viewsets.ViewSet):
             script.save()
 
             # Json salida
-            salida = {'output': stdout, 'error': stderr, 'inicio': inicio, 'fin': fin}
+            salida = {'output': stdout.split("\n"), 'error': stderr.split("\n"), 'inicio': inicio, 'fin': fin}
 
             return Response(salida, status=201)
         except subprocess.CalledProcessError as e:
